@@ -78,4 +78,8 @@ if __name__=='__main__':
 		sg.set_global_icon(ICON_DATA)
 		MainWindow()
 	else:
-		ExtractPackage(sys.argv[1], sys.argv[2])
+		if len(sys.argv) > 3:
+			o = sys.argv[2]
+		else:
+			o = os.path.join(os.path.dirname(sys.argv[1]), sys.argv[1].rsplit(".", maxsplit=1)[1])
+		ExtractPackage(sys.argv[1], o)
