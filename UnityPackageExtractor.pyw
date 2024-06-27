@@ -46,7 +46,7 @@ def ExtractPackage(fname, dname):
 	except Exception as e:
 		return ErrorWindow(f"Error opening Unity Package {fname} as archive.\nOriginal Error:\n{str(e)}")
 	with TemporaryDirectory(prefix="PyUnityPackageExtractor") as d:
-		zf.extractall(d, [f if not f.name[1] == ':' or f.startswith("/") else None for f in zf.getmembers()])
+		zf.extractall(d)
 		zf.close()
 		try:
 			os.mkdir(dname)
