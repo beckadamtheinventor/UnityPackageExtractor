@@ -1,1 +1,1 @@
-pyinstaller --onefile -i icon.png UnityPackageExtractor.pyw
+python -m PyInstaller --onefile -i icon.png UnityPackageExtractor.py
